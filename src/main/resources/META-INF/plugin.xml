@@ -1,0 +1,33 @@
+<idea-plugin>
+
+    <id>com.zeks.jetbrains.task.StringSearch</id>
+
+    <name>StringSearch</name>
+
+    <vendor>zeks</vendor>
+
+    <description><![CDATA[
+        Task number 3 for "Code navigation for implicit declarations in IntelliJ" project
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow id="Text Search" secondary="true" anchor="right"
+                    factoryClass="com.zeks.jetbrains.task.stringsearch.TextSearchToolWindowFactory"/>
+    </extensions>
+    <actions>
+        <group id="com.zeks.jetbrains.task.stringsearch.TextSearchActionGroup"
+               class="com.zeks.jetbrains.task.stringsearch.TextSearchActionGroup"
+               text="Search Text Occurrence Group">
+        </group>
+
+        <action id="com.zeks.jetbrains.task.stringsearch.RunSearchAction"
+                class="com.zeks.jetbrains.task.stringsearch.RunSearchAction" text="Search Text Occurrence"
+                description="Gets all positions in each file the input text is found"
+                icon="AllIcons.Actions.Execute"/>
+        <action id="com.zeks.jetbrains.task.stringsearch.StopSearchAction"
+                class="com.zeks.jetbrains.task.stringsearch.StopSearchAction" text="Stop Searching Text Occurence"
+                icon="AllIcons.Actions.Suspend"/>
+    </actions>
+</idea-plugin>
